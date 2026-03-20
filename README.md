@@ -41,4 +41,5 @@ python 02-microsoft-foundry-agents/01-quickstart-responses.py
 - `01-agent-framework/`: Core Agent Framework samples
 - `02-microsoft-foundry-agents/`: Foundry agent quickstarts
 - `03-microsoft-foundry-hosted-agents/`: Hosted agent scenarios and workflows
+- `05-github-copilot/`: GitHub Copilot tutorial — build a ticketing app with MCP and Agent Framework
 - `Prereqs*.md`: Setup prerequisites and environment guidance
