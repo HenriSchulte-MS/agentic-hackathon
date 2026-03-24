@@ -52,8 +52,8 @@ You need an Azure subscription with access to Azure AI Foundry and model deploym
 ## 3) Open the project in VS Code
 
 1. Launch VS Code.
-2. `File -> Open Folder...` and select:
-   - `c:\Users\haforsbe\agentic-hackathon`
+2. `File -> Open Folder...` and select your cloned repo folder:
+   - `<your-clone-path>\agentic-hackathon`
 3. Open a new terminal in VS Code (`Terminal -> New Terminal`).
 
 ---
@@ -135,7 +135,7 @@ python 02_add_tools.py
 python 03_multi_turn.py
 python 04_memory.py
 python 05_first_workflow.py
-python 06_host_your_agent.py
+python 06_remote_mcp.py
 cd ..
 ```
 

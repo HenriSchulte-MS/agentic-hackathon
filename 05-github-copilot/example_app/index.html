@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Support Ticketing System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>🎫 IT Support Tickets</h1>
+      <p class="subtitle">Manage and track support requests</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Ticket Creation Form -->
+    <section class="card form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Create New Ticket</h2>
+      <form id="ticket-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="ticket-title">Title <span class="required" aria-label="required">*</span></label>
+            <input type="text" id="ticket-title" name="title" required placeholder="Brief summary of the issue" autocomplete="off">
+            <span class="error-message" id="title-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="ticket-assignee">Assigned Technician</label>
+            <select id="ticket-assignee" name="assignee">
+              <option value="">-- Select Technician --</option>
+              <option value="Alice Johnson">Alice Johnson</option>
+              <option value="Bob Smith">Bob Smith</option>
+              <option value="Carol Davis">Carol Davis</option>
+              <option value="Dan Wilson">Dan Wilson</option>
+              <option value="Eve Martinez">Eve Martinez</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ticket-priority">Priority <span class="required" aria-label="required">*</span></label>
+            <select id="ticket-priority" name="priority" required>
+              <option value="">-- Select Priority --</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Critical">Critical</option>
+            </select>
+            <span class="error-message" id="priority-error" role="alert"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="ticket-description">Description <span class="required" aria-label="required">*</span></label>
+            <textarea id="ticket-description" name="description" required rows="3" placeholder="Describe the issue in detail"></textarea>
+            <span class="error-message" id="description-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-btn">Create Ticket</button>
+          <button type="button" class="btn btn-secondary" id="cancel-btn" style="display:none;">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Ticket List -->
+    <section class="card" aria-labelledby="tickets-heading">
+      <div class="tickets-header">
+        <h2 id="tickets-heading">All Tickets</h2>
+        <span class="ticket-count" id="ticket-count" aria-live="polite"></span>
+      </div>
+
+      <div class="tickets-list" id="tickets-list" role="list">
+        <!-- Tickets rendered by script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit Modal -->
+  <div class="modal-overlay" id="edit-modal" role="dialog" aria-labelledby="modal-heading" aria-modal="true" hidden>
+    <div class="modal">
+      <h2 id="modal-heading">Edit Ticket</h2>
+      <form id="edit-form" novalidate>
+        <input type="hidden" id="edit-id">
+
+        <div class="form-group">
+          <label for="edit-title">Title <span class="required" aria-label="required">*</span></label>
+          <input type="text" id="edit-title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-description">Description <span class="required" aria-label="required">*</span></label>
+          <textarea id="edit-description" required rows="3"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-priority">Priority</label>
+            <select id="edit-priority">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Critical">Critical</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-status">Status</label>
+            <select id="edit-status">
+              <option value="Open">Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+              <option value="Closed">Closed</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-assignee">Technician</label>
+            <select id="edit-assignee">
+              <option value="">-- Unassigned --</option>
+              <option value="Alice Johnson">Alice Johnson</option>
+              <option value="Bob Smith">Bob Smith</option>
+              <option value="Carol Davis">Carol Davis</option>
+              <option value="Dan Wilson">Dan Wilson</option>
+              <option value="Eve Martinez">Eve Martinez</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 IT Support Ticketing System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

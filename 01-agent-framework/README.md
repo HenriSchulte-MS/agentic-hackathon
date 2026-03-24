@@ -35,7 +35,7 @@ These scripts are a progressive learning path for Agent Framework on Azure:
 - Maintain conversation context across turns and sessions.
 - Inject dynamic runtime context using custom context providers.
 - Build an executor-based workflow with explicit graph edges.
-- Host an agent behind Azure Functions for API-style invocation.
+- Connect an agent to a remote MCP server so it can call external tools.
 
 ## Samples
 
@@ -46,7 +46,7 @@ These scripts are a progressive learning path for Agent Framework on Azure:
 | 3 | [03_multi_turn.py](03_multi_turn.py) | Keep conversation history across turns with `Agent` sessions. |
 | 4 | [04_memory.py](04_memory.py) | Add dynamic context with a custom `BaseContextProvider`. |
 | 5 | [05_first_workflow.py](05_first_workflow.py) | Chain executors into a workflow with edges. |
-| 6 | [06_host_your_agent.py](06_host_your_agent.py) | Host a single agent with Azure Functions. |
+| 6 | [06_remote_mcp.py](06_remote_mcp.py) | Connect an agent to a remote MCP server for live tool use. |
 
 Run any sample with:
 
